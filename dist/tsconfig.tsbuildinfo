@@ -747,8 +747,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "fcd05ad8b9c473dce7749ed849ca59a4bd1615c74d54ef0e54957f6406d8396d",
-        "signature": "9e282feb1a3290cdb651b835014490152e0f47242943360e667537707c851564",
+        "version": "f501dedbb6a5ee4608fa362fc97373020b37d427f5743dc0d175188c14d9217e",
+        "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
       "../src/verify-request/types.ts": {
@@ -1989,7 +1989,20 @@
       "../src/auth/create-top-level-oauth-redirect.ts",
       "../src/auth/create-top-level-redirect.ts",
       "../src/auth/errors.ts",
-      "../src/auth/index.ts",
+      [
+        "../src/auth/index.ts",
+        [
+          {
+            "file": "../src/auth/index.ts",
+            "start": 38,
+            "length": 17,
+            "messageText": "'OAuthStartOptions' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
       "../src/auth/redirection-page.ts",
       "../src/auth/set-user-agent.ts",
       "../src/index.ts",

@@ -29,7 +29,13 @@ function shouldPerformInlineOAuth({cookies}: Context) {
   return Boolean(cookies.get(TOP_LEVEL_OAUTH_COOKIE_NAME));
 }
 
-export default function createShopifyAuth(options: OAuthStartOptions) {
+export default function createShopifyAuth(options) {
+  
+  if (options.contextInitialParams) {
+    console.log("Initializing Shopify.Context in createShopifyAuth as workaround");
+    Shopify.Context.initialize(options.contextInitialParams);  
+  }
+  
   const config = {
     prefix: '',
     myShopifyDomain: DEFAULT_MYSHOPIFY_DOMAIN,

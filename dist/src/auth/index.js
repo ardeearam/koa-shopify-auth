@@ -26,6 +26,10 @@ function shouldPerformInlineOAuth(_a) {
     return Boolean(cookies.get(exports.TOP_LEVEL_OAUTH_COOKIE_NAME));
 }
 function createShopifyAuth(options) {
+    if (options.contextInitialParams) {
+        console.log("Initializing Shopify.Context in createShopifyAuth as workaround");
+        shopify_api_1.default.Context.initialize(options.contextInitialParams);
+    }
     var config = tslib_1.__assign({ prefix: '', myShopifyDomain: DEFAULT_MYSHOPIFY_DOMAIN, accessMode: exports.DEFAULT_ACCESS_MODE }, options);
     var prefix = config.prefix;
     var oAuthStartPath = prefix + "/auth";
