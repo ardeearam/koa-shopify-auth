@@ -747,7 +747,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "f501dedbb6a5ee4608fa362fc97373020b37d427f5743dc0d175188c14d9217e",
+        "version": "65bc066a01c6e68d553fc56d86a1e114cf61ed49d90c436ddc3577b1976a5888",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -1989,20 +1989,7 @@
       "../src/auth/create-top-level-oauth-redirect.ts",
       "../src/auth/create-top-level-redirect.ts",
       "../src/auth/errors.ts",
-      [
-        "../src/auth/index.ts",
-        [
-          {
-            "file": "../src/auth/index.ts",
-            "start": 38,
-            "length": 17,
-            "messageText": "'OAuthStartOptions' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          }
-        ]
-      ],
+      "../src/auth/index.ts",
       "../src/auth/redirection-page.ts",
       "../src/auth/set-user-agent.ts",
       "../src/index.ts",

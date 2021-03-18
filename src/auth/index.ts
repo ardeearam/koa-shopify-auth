@@ -1,6 +1,6 @@
 import {Context} from 'koa';
 
-import {OAuthStartOptions, AccessMode, NextFunction} from '../types';
+import {AccessMode, NextFunction} from '../types';
 
 import getCookieOptions from './cookie-options';
 import createEnableCookies from './create-enable-cookies';
