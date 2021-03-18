@@ -1,41 +1,31 @@
-import {Context} from 'koa';
-import {Method, Header, StatusCode} from '@shopify/network';
+import Shopify from '@shopify/shopify-api';
+import { Session } from '@shopify/shopify-api/dist/auth/session';
 
-import {NextFunction} from '../types';
+import {Context} from 'koa';
+
+import {AccessMode, NextFunction} from '../types';
 import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
 
 import {Routes} from './types';
 import {redirectToAuth} from './utilities';
+import {DEFAULT_ACCESS_MODE} from '../auth';
 
-export function verifyToken(routes: Routes) {
+export function verifyToken(routes: Routes, accessMode: AccessMode = DEFAULT_ACCESS_MODE) {
   return async function verifyTokenMiddleware(
     ctx: Context,
     next: NextFunction,
   ) {
-    const {session} = ctx;
+    let session: Session | undefined;
+    session = await Shopify.Utils.loadCurrentSession(ctx.req, ctx.res, accessMode === 'online');
 
-    if (session && session.accessToken) {
-      ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME);
-      // If a user has installed the store previously on their shop, the accessToken can be stored in session.
-      // we need to check if the accessToken is valid, and the only way to do this is by hitting the api.
-      const response = await fetch(
-        `https://${session.shop}/admin/metafields.json`,
-        {
-          method: Method.Post,
-          headers: {
-            [Header.ContentType]: 'application/json',
-            'X-Shopify-Access-Token': session.accessToken,
-          },
-        },
-      );
+    if (session) {
+      const scopesChanged = !Shopify.Context.SCOPES.equals(session.scope);
 
-      if (response.status === StatusCode.Unauthorized) {
-        redirectToAuth(routes, ctx);
+      if (!scopesChanged && session.accessToken && (!session.expires || session.expires >= new Date())) {
+        ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME);
+        await next();
         return;
       }
-
-      await next();
-      return;
     }
 
     ctx.cookies.set(TEST_COOKIE_NAME, '1');
