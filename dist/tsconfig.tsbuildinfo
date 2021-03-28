@@ -726,28 +726,13 @@
         "signature": "9c4662f7c1ecd586877bd9f8588550a495f5691b7b9687a3282265390a55a9fa",
         "affectsGlobalScope": false
       },
-      "../src/auth/client/request-storage-access.ts": {
-        "version": "5bc1652a36a1a5ca4d9d68eb8d91d9200dffa3d005ba3d9eb5a87ace2059188d",
-        "signature": "bcc45038db3483f82195cff2b1411d7129ab13b3e56a1307203264adc83727a7",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/client/storage-access-helper.ts": {
-        "version": "175e07ab5f18f2fa3aa2dcc4d08f6304627d47f2260327019ff78efd852f191f",
-        "signature": "c89288fe4af2bb98980426a012136630fa77de08f27f3a725b936f9fa24b84dc",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/create-request-storage-access.ts": {
-        "version": "1874c08ff69cad637f3f4de97d88bd1e606bfeccf16af191afd9ca9aa34fc4c7",
-        "signature": "0b3d5c3966a159aadd4c56821a0a6c2014dc23c3690a4e8ac4da3af10b463496",
-        "affectsGlobalScope": false
-      },
       "../src/auth/set-user-agent.ts": {
         "version": "3656bef8de6277025c9b1f7765f3072e8f10b030edcde17bb46709e702bd4bd8",
         "signature": "e15f35489c56aec3493541c1f518e85cc07d8b5d3dc3ee4406af0ec0c08eee64",
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "2d4a3b08cf7bafd1747a54c35b8d16e7e22d73b08d9125ec294c377673d919fa",
+        "version": "8db4a7eb0deb78032f683b57641b31bcf6a99c3d53461e86227c0a3f8e8e4470",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -784,6 +769,21 @@
       "../src/index.ts": {
         "version": "e9135a0a0acd23e8a1e940df6acadee025cbc56f7b7f88938ba5fd583ff9215a",
         "signature": "cddb75a7055917dcb12ef86a967e68dbb249016d96479b2ad7496d8ac888ba8b",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/client/request-storage-access.ts": {
+        "version": "5bc1652a36a1a5ca4d9d68eb8d91d9200dffa3d005ba3d9eb5a87ace2059188d",
+        "signature": "bcc45038db3483f82195cff2b1411d7129ab13b3e56a1307203264adc83727a7",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/client/storage-access-helper.ts": {
+        "version": "175e07ab5f18f2fa3aa2dcc4d08f6304627d47f2260327019ff78efd852f191f",
+        "signature": "c89288fe4af2bb98980426a012136630fa77de08f27f3a725b936f9fa24b84dc",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/create-request-storage-access.ts": {
+        "version": "1874c08ff69cad637f3f4de97d88bd1e606bfeccf16af191afd9ca9aa34fc4c7",
+        "signature": "0b3d5c3966a159aadd4c56821a0a6c2014dc23c3690a4e8ac4da3af10b463496",
         "affectsGlobalScope": false
       }
     },
@@ -1295,7 +1295,6 @@
         "../node_modules/@types/koa/index.d.ts",
         "../src/auth/cookie-options.ts",
         "../src/auth/create-enable-cookies.ts",
-        "../src/auth/create-request-storage-access.ts",
         "../src/auth/create-top-level-oauth-redirect.ts",
         "../src/auth/errors.ts",
         "../src/auth/set-user-agent.ts",

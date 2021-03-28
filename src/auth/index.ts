@@ -5,7 +5,7 @@ import {AccessMode, NextFunction} from '../types';
 import getCookieOptions from './cookie-options';
 import createEnableCookies from './create-enable-cookies';
 import createTopLevelOAuthRedirect from './create-top-level-oauth-redirect';
-import createRequestStorageAccess from './create-request-storage-access';
+//import createRequestStorageAccess from './create-request-storage-access';
 import setUserAgent from './set-user-agent';
 
 import Shopify from '@shopify/shopify-api';
@@ -17,13 +17,13 @@ export const TOP_LEVEL_OAUTH_COOKIE_NAME = 'shopifyTopLevelOAuth';
 export const TEST_COOKIE_NAME = 'shopifyTestCookie';
 export const GRANTED_STORAGE_ACCESS_COOKIE_NAME = 'shopify.granted_storage_access';
 
-function hasCookieAccess({cookies}: Context) {
-  return Boolean(cookies.get(TEST_COOKIE_NAME));
-}
+//function hasCookieAccess({cookies}: Context) {
+//  return Boolean(cookies.get(TEST_COOKIE_NAME));
+//}
 
-function grantedStorageAccess({cookies}: Context) {
-  return Boolean(cookies.get(GRANTED_STORAGE_ACCESS_COOKIE_NAME));
-}
+//function grantedStorageAccess({cookies}: Context) {
+//  return Boolean(cookies.get(GRANTED_STORAGE_ACCESS_COOKIE_NAME));
+//}
 
 function shouldPerformInlineOAuth({cookies}: Context) {
   return Boolean(cookies.get(TOP_LEVEL_OAUTH_COOKIE_NAME));
@@ -56,7 +56,7 @@ export default function createShopifyAuth(options) {
 
   const enableCookiesPath = `${oAuthStartPath}/enable_cookies`;
   const enableCookies = createEnableCookies(config);
-  const requestStorageAccess = createRequestStorageAccess(config);
+ // const requestStorageAccess = createRequestStorageAccess(config);
 
   setUserAgent();
 
@@ -64,6 +64,7 @@ export default function createShopifyAuth(options) {
     console.log("SHOPIFYAUTH********.");
     ctx.cookies.secure = true;
 
+    /*
     if (
       ctx.path === oAuthStartPath &&
       !hasCookieAccess(ctx) &&
@@ -72,6 +73,7 @@ export default function createShopifyAuth(options) {
       await requestStorageAccess(ctx);
       return;
     }
+    */
 
     if (
       ctx.path === inlineOAuthPath ||
