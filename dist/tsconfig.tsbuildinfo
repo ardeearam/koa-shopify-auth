@@ -747,7 +747,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "599625f4002a17d96703dae12ff4fc2837908ed4856803d8d818d8c741c7a414",
+        "version": "57825e2063fbbd339c2e34723d36cdfbf1ac3e4080c32a694aaab63d0415d198",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -767,7 +767,7 @@
         "affectsGlobalScope": false
       },
       "../src/verify-request/verify-token.ts": {
-        "version": "fb6355410ff5d1dd7f90b2d07f2877acb0eb88bd2b21064111e5c4a85ed114ba",
+        "version": "41fa4297da81a99a70cd72ba478e9222dad3179e3d3aabb2dc6c0c471b2f7819",
         "signature": "2c04e567f8ee8403a6983deeaa01ffc1adaa0c564fc930ec52420ad1b6145a71",
         "affectsGlobalScope": false
       },
@@ -1344,6 +1344,7 @@
         "../node_modules/@shopify/shopify-api/dist/auth/session/index.d.ts",
         "../node_modules/@shopify/shopify-api/dist/index.d.ts",
         "../node_modules/@types/koa/index.d.ts",
+        "../src/auth/cookie-options.ts",
         "../src/auth/index.ts",
         "../src/index.ts",
         "../src/types.ts",
