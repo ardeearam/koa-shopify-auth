@@ -27,7 +27,7 @@ function shouldPerformInlineOAuth(_a) {
 }
 function createShopifyAuth(options) {
     if (options.contextInitialParams) {
-        console.log("Initializing Shopify.Context in createShopifyAuth as workaround v4");
+        console.log("Initializing Shopify.Context in createShopifyAuth as workaround v5");
         shopify_api_1.default.Context.initialize(options.contextInitialParams);
     }
     var config = tslib_1.__assign({ prefix: '', myShopifyDomain: DEFAULT_MYSHOPIFY_DOMAIN, accessMode: exports.DEFAULT_ACCESS_MODE }, options);

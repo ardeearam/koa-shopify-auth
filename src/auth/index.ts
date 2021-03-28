@@ -32,7 +32,7 @@ function shouldPerformInlineOAuth({cookies}: Context) {
 export default function createShopifyAuth(options) {
   
   if (options.contextInitialParams) {
-    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v4");
+    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v5");
     Shopify.Context.initialize(options.contextInitialParams);  
   }
   
