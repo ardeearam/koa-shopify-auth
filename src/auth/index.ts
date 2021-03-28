@@ -95,6 +95,7 @@ export default function createShopifyAuth(options) {
     }
 
     if (ctx.path === oAuthStartPath) {
+      console.log("oAuthStartPath");
       await topLevelOAuthRedirect(ctx);
       return;
     }

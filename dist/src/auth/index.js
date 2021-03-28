@@ -70,6 +70,7 @@ function createShopifyAuth(options) {
                         return [2 /*return*/];
                     case 4:
                         if (!(ctx.path === oAuthStartPath)) return [3 /*break*/, 6];
+                        console.log("oAuthStartPath");
                         return [4 /*yield*/, topLevelOAuthRedirect(ctx)];
                     case 5:
                         _b.sent();
