@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyToken = void 0;
 var tslib_1 = require("tslib");
 var shopify_api_1 = tslib_1.__importDefault(require("@shopify/shopify-api"));
+//import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
 var index_1 = require("../index");
 var utilities_1 = require("./utilities");
 var auth_1 = require("../auth");
@@ -20,9 +21,10 @@ function verifyToken(routes, accessMode) {
                         if (!session) return [3 /*break*/, 3];
                         scopesChanged = !shopify_api_1.default.Context.SCOPES.equals(session.scope);
                         if (!(!scopesChanged && session.accessToken && (!session.expires || +(new Date(session.expires)) >= +(new Date())))) return [3 /*break*/, 3];
-                        ctx.cookies.set(index_1.TOP_LEVEL_OAUTH_COOKIE_NAME, '', cookie_options_1.default(ctx));
+                        //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
                         return [4 /*yield*/, next()];
                     case 2:
+                        //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
                         _a.sent();
                         return [2 /*return*/];
                     case 3:

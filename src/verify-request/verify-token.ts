@@ -4,7 +4,8 @@ import { Session } from '@shopify/shopify-api/dist/auth/session';
 import {Context} from 'koa';
 
 import {AccessMode, NextFunction} from '../types';
-import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
+//import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
+import {TEST_COOKIE_NAME} from '../index';
 
 import {Routes} from './types';
 import {redirectToAuth} from './utilities';
@@ -23,7 +24,7 @@ export function verifyToken(routes: Routes, accessMode: AccessMode = DEFAULT_ACC
       const scopesChanged = !Shopify.Context.SCOPES.equals(session.scope);
 
       if (!scopesChanged && session.accessToken && (!session.expires || +(new Date(session.expires)) >= +(new Date()))) {
-        ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
+        //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
         await next();
         return;
       }

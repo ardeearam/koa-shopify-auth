@@ -82,7 +82,7 @@ export default function createShopifyAuth(options) {
         ctx.throw(400);
       }
 
-      ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
+      //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
       console.log("The top level cookie has been planted.");
       console.log(getCookieOptions(ctx));
       const redirectUrl = await Shopify.Auth.beginAuth(

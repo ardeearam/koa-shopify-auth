@@ -747,7 +747,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "3b6b90ac74ff0690987e2bc37542dfc924384d7ade03cfc09b33e1d012116f0d",
+        "version": "d4fa680825ba4c2b11f02551cd59cfba6184afd5eab466fef703f5a3878d6463",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -767,7 +767,7 @@
         "affectsGlobalScope": false
       },
       "../src/verify-request/verify-token.ts": {
-        "version": "41fa4297da81a99a70cd72ba478e9222dad3179e3d3aabb2dc6c0c471b2f7819",
+        "version": "bc06a910aa214026a52e7e0066c2bec7a4c09a067ebcd930a294aadefbae12c2",
         "signature": "2c04e567f8ee8403a6983deeaa01ffc1adaa0c564fc930ec52420ad1b6145a71",
         "affectsGlobalScope": false
       },
