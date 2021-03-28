@@ -472,7 +472,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/cookie-options.ts": {
-        "version": "a5687d2cea00a9e155846df1e0ea1249e5be541bd3f5f77e7d87fd885f85329e",
+        "version": "ea5c895f143c86f9e22e1ef1c0e9a1a481a589449bfb18776f84d243eab356eb",
         "signature": "c11a9e1ad850b94669614899fd4cd497a9266f25978829377b0c0678614cdda8",
         "affectsGlobalScope": false
       },
