@@ -119,11 +119,13 @@ const storageAccessHelper = `(function() {
       }
 
       StorageAccessHelper.prototype.execute = function() {
+        /* Neuter this SOB
         if (ITPHelper.prototype.userAgentIsAffected()) {
           this.manageStorageAccess();
         } else {
           this.grantedStorageAccess();
         }
+        */
       }
 
       /* ITP 2.0 solution: handles cookie partitioning */

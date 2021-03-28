@@ -1,11 +1,11 @@
 import {Context} from 'koa';
 
-import {OAuthStartOptions, AccessMode, NextFunction} from '../types';
+import {AccessMode, NextFunction} from '../types';
 
-import getCookieOptions from './cookie-options';
+//import getCookieOptions from './cookie-options';
 import createEnableCookies from './create-enable-cookies';
 import createTopLevelOAuthRedirect from './create-top-level-oauth-redirect';
-import createRequestStorageAccess from './create-request-storage-access';
+//import createRequestStorageAccess from './create-request-storage-access';
 import setUserAgent from './set-user-agent';
 
 import Shopify from '@shopify/shopify-api';
@@ -17,13 +17,13 @@ export const TOP_LEVEL_OAUTH_COOKIE_NAME = 'shopifyTopLevelOAuth';
 export const TEST_COOKIE_NAME = 'shopifyTestCookie';
 export const GRANTED_STORAGE_ACCESS_COOKIE_NAME = 'shopify.granted_storage_access';
 
-function hasCookieAccess({cookies}: Context) {
-  return Boolean(cookies.get(TEST_COOKIE_NAME));
-}
+//function hasCookieAccess({cookies}: Context) {
+//  return Boolean(cookies.get(TEST_COOKIE_NAME));
+//}
 
-function grantedStorageAccess({cookies}: Context) {
-  return Boolean(cookies.get(GRANTED_STORAGE_ACCESS_COOKIE_NAME));
-}
+//function grantedStorageAccess({cookies}: Context) {
+//  return Boolean(cookies.get(GRANTED_STORAGE_ACCESS_COOKIE_NAME));
+//}
 
 function shouldPerformInlineOAuth({cookies}: Context) {
   return Boolean(cookies.get(TOP_LEVEL_OAUTH_COOKIE_NAME));
@@ -32,7 +32,7 @@ function shouldPerformInlineOAuth({cookies}: Context) {
 export default function createShopifyAuth(options) {
   
   if (options.contextInitialParams) {
-    console.log("Initializing Shopify.Context in createShopifyAuth as workaround");
+    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v8");
     Shopify.Context.initialize(options.contextInitialParams);  
   }
   
@@ -56,13 +56,15 @@ export default function createShopifyAuth(options) {
 
   const enableCookiesPath = `${oAuthStartPath}/enable_cookies`;
   const enableCookies = createEnableCookies(config);
-  const requestStorageAccess = createRequestStorageAccess(config);
+ // const requestStorageAccess = createRequestStorageAccess(config);
 
   setUserAgent();
 
   return async function shopifyAuth(ctx: Context, next: NextFunction) {
+    console.log("SHOPIFYAUTH********.");
     ctx.cookies.secure = true;
 
+    /*
     if (
       ctx.path === oAuthStartPath &&
       !hasCookieAccess(ctx) &&
@@ -71,6 +73,7 @@ export default function createShopifyAuth(options) {
       await requestStorageAccess(ctx);
       return;
     }
+    */
 
     if (
       ctx.path === inlineOAuthPath ||
@@ -81,7 +84,9 @@ export default function createShopifyAuth(options) {
         ctx.throw(400);
       }
 
-      ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
+      //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
+      //console.log("The top level cookie has been planted.");
+      //console.log(getCookieOptions(ctx));
       const redirectUrl = await Shopify.Auth.beginAuth(
         ctx.req,
         ctx.res,
@@ -94,6 +99,7 @@ export default function createShopifyAuth(options) {
     }
 
     if (ctx.path === oAuthStartPath) {
+      console.log("oAuthStartPath");
       await topLevelOAuthRedirect(ctx);
       return;
     }
@@ -125,6 +131,7 @@ export default function createShopifyAuth(options) {
     }
 
     if (ctx.path === enableCookiesPath) {
+      console.log('enableCookies');
       await enableCookies(ctx);
       return;
     }

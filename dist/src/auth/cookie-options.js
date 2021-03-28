@@ -7,7 +7,7 @@ function getCookieOptions(ctx) {
     var cookieOptions = {};
     if (isChrome) {
         cookieOptions = {
-            sameSite: 'none',
+            sameSite: 'strict',
             secure: true,
         };
     }

@@ -4,11 +4,13 @@ import { Session } from '@shopify/shopify-api/dist/auth/session';
 import {Context} from 'koa';
 
 import {AccessMode, NextFunction} from '../types';
-import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
+//import {TEST_COOKIE_NAME, TOP_LEVEL_OAUTH_COOKIE_NAME} from '../index';
+import {TEST_COOKIE_NAME} from '../index';
 
 import {Routes} from './types';
 import {redirectToAuth} from './utilities';
 import {DEFAULT_ACCESS_MODE} from '../auth';
+import getCookieOptions from '../auth/cookie-options';
 
 export function verifyToken(routes: Routes, accessMode: AccessMode = DEFAULT_ACCESS_MODE) {
   return async function verifyTokenMiddleware(
@@ -22,13 +24,13 @@ export function verifyToken(routes: Routes, accessMode: AccessMode = DEFAULT_ACC
       const scopesChanged = !Shopify.Context.SCOPES.equals(session.scope);
 
       if (!scopesChanged && session.accessToken && (!session.expires || +(new Date(session.expires)) >= +(new Date()))) {
-        ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME);
+        //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
         await next();
         return;
       }
     }
 
-    ctx.cookies.set(TEST_COOKIE_NAME, '1');
+    ctx.cookies.set(TEST_COOKIE_NAME, '1', getCookieOptions(ctx));
 
     redirectToAuth(routes, ctx);
   };
