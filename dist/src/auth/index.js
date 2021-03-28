@@ -62,6 +62,7 @@ function createShopifyAuth(options) {
                             ctx.throw(400);
                         }
                         ctx.cookies.set(exports.TOP_LEVEL_OAUTH_COOKIE_NAME, '', cookie_options_1.default(ctx));
+                        console.log("The top level cookie has been planted.");
                         return [4 /*yield*/, shopify_api_1.default.Auth.beginAuth(ctx.req, ctx.res, shop, oAuthCallbackPath, config.accessMode === 'online')];
                     case 3:
                         redirectUrl = _b.sent();
