@@ -61,6 +61,7 @@ export default function createShopifyAuth(options) {
   setUserAgent();
 
   return async function shopifyAuth(ctx: Context, next: NextFunction) {
+    console.log("SHOPIFYAUTH********.");
     ctx.cookies.secure = true;
 
     if (
