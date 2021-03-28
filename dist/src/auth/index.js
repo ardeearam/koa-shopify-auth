@@ -46,6 +46,7 @@ function createShopifyAuth(options) {
             return tslib_1.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
+                        console.log("SHOPIFYAUTH********.");
                         ctx.cookies.secure = true;
                         if (!(ctx.path === oAuthStartPath &&
                             !hasCookieAccess(ctx) &&

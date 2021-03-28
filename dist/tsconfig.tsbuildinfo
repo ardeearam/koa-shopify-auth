@@ -747,7 +747,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "90d7a53f5d949780f550d702a807f6254e4e863b93b62078ee63c107e64d4d30",
+        "version": "0a03520af1ffb27eafa33c092485668c79ec19e0a59102e71fdb6391399438b6",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
