@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Error = exports.GRANTED_STORAGE_ACCESS_COOKIE_NAME = exports.TEST_COOKIE_NAME = exports.TOP_LEVEL_OAUTH_COOKIE_NAME = exports.DEFAULT_ACCESS_MODE = void 0;
 var tslib_1 = require("tslib");
-var cookie_options_1 = tslib_1.__importDefault(require("./cookie-options"));
+//import getCookieOptions from './cookie-options';
 var create_enable_cookies_1 = tslib_1.__importDefault(require("./create-enable-cookies"));
 var create_top_level_oauth_redirect_1 = tslib_1.__importDefault(require("./create-top-level-oauth-redirect"));
 //import createRequestStorageAccess from './create-request-storage-access';
@@ -25,7 +25,7 @@ function shouldPerformInlineOAuth(_a) {
 }
 function createShopifyAuth(options) {
     if (options.contextInitialParams) {
-        console.log("Initializing Shopify.Context in createShopifyAuth as workaround v7");
+        console.log("Initializing Shopify.Context in createShopifyAuth as workaround v8");
         shopify_api_1.default.Context.initialize(options.contextInitialParams);
     }
     var config = tslib_1.__assign({ prefix: '', myShopifyDomain: DEFAULT_MYSHOPIFY_DOMAIN, accessMode: exports.DEFAULT_ACCESS_MODE }, options);
@@ -52,9 +52,6 @@ function createShopifyAuth(options) {
                         if (shop == null) {
                             ctx.throw(400);
                         }
-                        //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
-                        console.log("The top level cookie has been planted.");
-                        console.log(cookie_options_1.default(ctx));
                         return [4 /*yield*/, shopify_api_1.default.Auth.beginAuth(ctx.req, ctx.res, shop, oAuthCallbackPath, config.accessMode === 'online')];
                     case 1:
                         redirectUrl = _b.sent();
@@ -102,6 +99,7 @@ function createShopifyAuth(options) {
                     case 11: return [2 /*return*/];
                     case 12:
                         if (!(ctx.path === enableCookiesPath)) return [3 /*break*/, 14];
+                        console.log('enableCookies');
                         return [4 /*yield*/, enableCookies(ctx)];
                     case 13:
                         _b.sent();

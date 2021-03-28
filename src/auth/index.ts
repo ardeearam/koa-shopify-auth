@@ -2,7 +2,7 @@ import {Context} from 'koa';
 
 import {AccessMode, NextFunction} from '../types';
 
-import getCookieOptions from './cookie-options';
+//import getCookieOptions from './cookie-options';
 import createEnableCookies from './create-enable-cookies';
 import createTopLevelOAuthRedirect from './create-top-level-oauth-redirect';
 //import createRequestStorageAccess from './create-request-storage-access';
@@ -32,7 +32,7 @@ function shouldPerformInlineOAuth({cookies}: Context) {
 export default function createShopifyAuth(options) {
   
   if (options.contextInitialParams) {
-    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v7");
+    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v8");
     Shopify.Context.initialize(options.contextInitialParams);  
   }
   
@@ -85,8 +85,8 @@ export default function createShopifyAuth(options) {
       }
 
       //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
-      console.log("The top level cookie has been planted.");
-      console.log(getCookieOptions(ctx));
+      //console.log("The top level cookie has been planted.");
+      //console.log(getCookieOptions(ctx));
       const redirectUrl = await Shopify.Auth.beginAuth(
         ctx.req,
         ctx.res,
@@ -131,6 +131,7 @@ export default function createShopifyAuth(options) {
     }
 
     if (ctx.path === enableCookiesPath) {
+      console.log('enableCookies');
       await enableCookies(ctx);
       return;
     }

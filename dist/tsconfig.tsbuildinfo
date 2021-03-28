@@ -471,11 +471,6 @@
         "signature": "7cc70291f2bc224c8a0d26050e62c28ffd62b3ac19d1dfccc59a3605f9efdb50",
         "affectsGlobalScope": false
       },
-      "../src/auth/cookie-options.ts": {
-        "version": "ea5c895f143c86f9e22e1ef1c0e9a1a481a589449bfb18776f84d243eab356eb",
-        "signature": "c11a9e1ad850b94669614899fd4cd497a9266f25978829377b0c0678614cdda8",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@shopify/shopify-api/dist/error.d.ts": {
         "version": "df531b96b592139d9a69353ac5b2ddc97b4eefdd7f67d272f769ed8c48618655",
         "signature": "df531b96b592139d9a69353ac5b2ddc97b4eefdd7f67d272f769ed8c48618655",
@@ -721,6 +716,11 @@
         "signature": "5f4c16d73071d606af2711662a3728661c4de4938a70c0a36eaff0a1ef820363",
         "affectsGlobalScope": false
       },
+      "../src/auth/cookie-options.ts": {
+        "version": "ea5c895f143c86f9e22e1ef1c0e9a1a481a589449bfb18776f84d243eab356eb",
+        "signature": "c11a9e1ad850b94669614899fd4cd497a9266f25978829377b0c0678614cdda8",
+        "affectsGlobalScope": false
+      },
       "../src/auth/create-top-level-oauth-redirect.ts": {
         "version": "5969238e9531b9e000d43494c36948fe4602eab1898c41781e2bed611a3ff5ca",
         "signature": "9c4662f7c1ecd586877bd9f8588550a495f5691b7b9687a3282265390a55a9fa",
@@ -732,7 +732,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "ccc6412e2c00adbd6a33648ce2d0693e8746f41a321ae5d1049f76b10000e7d0",
+        "version": "8309c025163b35f567bf7944e4f1db8545962f5352ab0b02236d3ee26cf3f1a8",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -777,8 +777,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/client/storage-access-helper.ts": {
-        "version": "175e07ab5f18f2fa3aa2dcc4d08f6304627d47f2260327019ff78efd852f191f",
-        "signature": "c89288fe4af2bb98980426a012136630fa77de08f27f3a725b936f9fa24b84dc",
+        "version": "12e820d26e40559ca6fa19de7fe3fd8f09c94c182374563256fe5d0672298628",
+        "signature": "b34b13695d552f070933400be8a037cd6303ddd172cef69fbbb973fdbd15baf8",
         "affectsGlobalScope": false
       },
       "../src/auth/create-request-storage-access.ts": {
@@ -1293,7 +1293,6 @@
       "../src/auth/index.ts": [
         "../node_modules/@shopify/shopify-api/dist/index.d.ts",
         "../node_modules/@types/koa/index.d.ts",
-        "../src/auth/cookie-options.ts",
         "../src/auth/create-enable-cookies.ts",
         "../src/auth/create-top-level-oauth-redirect.ts",
         "../src/auth/errors.ts",
