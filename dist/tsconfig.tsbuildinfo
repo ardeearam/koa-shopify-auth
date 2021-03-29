@@ -777,8 +777,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/client/storage-access-helper.ts": {
-        "version": "12e820d26e40559ca6fa19de7fe3fd8f09c94c182374563256fe5d0672298628",
-        "signature": "b34b13695d552f070933400be8a037cd6303ddd172cef69fbbb973fdbd15baf8",
+        "version": "cfcce3bc079ff6ad3313bf9a82fba2da1e7d92255217dd98aa856e07229400bb",
+        "signature": "73174ecacba7f64e582fd1cf4257cef90514a57d52158a06a4c8a78b0f78fc2d",
         "affectsGlobalScope": false
       },
       "../src/auth/create-request-storage-access.ts": {
