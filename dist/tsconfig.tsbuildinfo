@@ -716,13 +716,8 @@
         "signature": "5f4c16d73071d606af2711662a3728661c4de4938a70c0a36eaff0a1ef820363",
         "affectsGlobalScope": false
       },
-      "../src/auth/cookie-options.ts": {
-        "version": "ea5c895f143c86f9e22e1ef1c0e9a1a481a589449bfb18776f84d243eab356eb",
-        "signature": "c11a9e1ad850b94669614899fd4cd497a9266f25978829377b0c0678614cdda8",
-        "affectsGlobalScope": false
-      },
       "../src/auth/create-top-level-oauth-redirect.ts": {
-        "version": "5969238e9531b9e000d43494c36948fe4602eab1898c41781e2bed611a3ff5ca",
+        "version": "b089cabd81d7598b9b9c3e34e91f3d8ff70e47723955fdac760de890849f3e1a",
         "signature": "9c4662f7c1ecd586877bd9f8588550a495f5691b7b9687a3282265390a55a9fa",
         "affectsGlobalScope": false
       },
@@ -732,7 +727,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "8309c025163b35f567bf7944e4f1db8545962f5352ab0b02236d3ee26cf3f1a8",
+        "version": "40042ae2a9e34be1c40f8ddd02d1b24c4c96ea384e7c746c57e6f3fd73f6d014",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -749,6 +744,11 @@
       "../src/verify-request/login-again-if-different-shop.ts": {
         "version": "45b527dbac759a23110b7d02a5eaec4670f625984dd2d506fb4ee5e84a808307",
         "signature": "f5c20301de6fb67160fab84e9f88d9974b491fe3cda9fffd3cc270c982be401f",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/cookie-options.ts": {
+        "version": "ea5c895f143c86f9e22e1ef1c0e9a1a481a589449bfb18776f84d243eab356eb",
+        "signature": "c11a9e1ad850b94669614899fd4cd497a9266f25978829377b0c0678614cdda8",
         "affectsGlobalScope": false
       },
       "../src/verify-request/verify-token.ts": {
@@ -1281,9 +1281,7 @@
       ],
       "../src/auth/create-top-level-oauth-redirect.ts": [
         "../node_modules/@types/koa/index.d.ts",
-        "../src/auth/cookie-options.ts",
-        "../src/auth/create-top-level-redirect.ts",
-        "../src/auth/index.ts"
+        "../src/auth/create-top-level-redirect.ts"
       ],
       "../src/auth/create-top-level-redirect.ts": [
         "../node_modules/@types/koa/index.d.ts",
