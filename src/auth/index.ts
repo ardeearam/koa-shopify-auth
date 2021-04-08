@@ -32,7 +32,7 @@ function shouldPerformInlineOAuth({cookies}: Context) {
 export default function createShopifyAuth(options) {
   
   if (options.contextInitialParams) {
-    console.log("Initializing Shopify.Context in createShopifyAuth as workaround v9");
+    console.log("Running custom koa-shopify-auth v13");
     Shopify.Context.initialize(options.contextInitialParams);  
   }
   
@@ -64,6 +64,15 @@ export default function createShopifyAuth(options) {
     console.log("SHOPIFYAUTH********.");
     ctx.cookies.secure = true;
 
+    const shop = ctx.query.shop;
+    const redirectUrl = await Shopify.Auth.beginAuth(
+      ctx.req,
+      ctx.res,
+      shop,
+      oAuthCallbackPath,
+      config.accessMode === 'online'
+    );
+    
     /*
     if (
       ctx.path === oAuthStartPath &&
@@ -79,7 +88,6 @@ export default function createShopifyAuth(options) {
       ctx.path === inlineOAuthPath ||
       (ctx.path === oAuthStartPath && shouldPerformInlineOAuth(ctx))
     ) {
-      const shop = ctx.query.shop;
       if (shop == null) {
         ctx.throw(400);
       }
@@ -87,13 +95,6 @@ export default function createShopifyAuth(options) {
       //ctx.cookies.set(TOP_LEVEL_OAUTH_COOKIE_NAME, '', getCookieOptions(ctx));
       //console.log("The top level cookie has been planted.");
       //console.log(getCookieOptions(ctx));
-      const redirectUrl = await Shopify.Auth.beginAuth(
-        ctx.req,
-        ctx.res,
-        shop,
-        oAuthCallbackPath,
-        config.accessMode === 'online'
-      );
       ctx.redirect(redirectUrl);
       return;
     }
@@ -117,13 +118,22 @@ export default function createShopifyAuth(options) {
       catch (e) {
         switch (true) {
           case (e instanceof Shopify.Errors.InvalidOAuthError):
-            ctx.throw(400, e.message);
+            //ctx.throw(400, e.message);
+            console.error(e.message);
+            console.error("Restarting OAuth dance...");
+            ctx.redirect(redirectUrl);
             break;
           case (e instanceof Shopify.Errors.SessionNotFound):
-            ctx.throw(403, e.message);
+            //ctx.throw(403, e.message);
+            console.error(e.message);
+            console.error("Restarting OAuth dance...");
+            ctx.redirect(redirectUrl);
             break;
           default:
-            ctx.throw(500, e.message);
+            //ctx.throw(500, e.message);
+            console.error(e.message);
+            console.error("Restarting OAuth dance...");
+            ctx.redirect(redirectUrl);
             break;
         }
       }
