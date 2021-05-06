@@ -617,8 +617,8 @@
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/utils/delete-current-session.d.ts": {
-        "version": "da2c9cd4bb76b205a2afef5ad33fe798e12b0c935c82684170e1a27384ef9322",
-        "signature": "da2c9cd4bb76b205a2afef5ad33fe798e12b0c935c82684170e1a27384ef9322",
+        "version": "e507b855a95f9707264b4e7b65e0d0c4e6c4585ef69e24dfcd7d9ce76f636e36",
+        "signature": "e507b855a95f9707264b4e7b65e0d0c4e6c4585ef69e24dfcd7d9ce76f636e36",
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/utils/delete-offline-session.d.ts": {
@@ -627,8 +627,8 @@
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/utils/load-current-session.d.ts": {
-        "version": "609d267c6ea0632a4b64dde9f37a0df6d0e5684dbad1d0b81d49ed90a32eab60",
-        "signature": "609d267c6ea0632a4b64dde9f37a0df6d0e5684dbad1d0b81d49ed90a32eab60",
+        "version": "944352d52268a7ac8a20fdef929d8c999af3b833681b4acd7f8d698433c89bc5",
+        "signature": "944352d52268a7ac8a20fdef929d8c999af3b833681b4acd7f8d698433c89bc5",
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/utils/load-offline-session.d.ts": {
@@ -672,13 +672,13 @@
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/webhooks/registry.d.ts": {
-        "version": "5b1c9cdd03cf39ff712ad5bff4d4b97904d9a99da5aebc72651486de950edfe2",
-        "signature": "5b1c9cdd03cf39ff712ad5bff4d4b97904d9a99da5aebc72651486de950edfe2",
+        "version": "c548ca08765aa47f497da1818ab7e3dcb9b79aaee1e507bdee24e83a5853d7d5",
+        "signature": "c548ca08765aa47f497da1818ab7e3dcb9b79aaee1e507bdee24e83a5853d7d5",
         "affectsGlobalScope": false
       },
       "../../shopify-node-api/dist/index.d.ts": {
-        "version": "9487aa22dbf6da8920b0dbd560c38ab796925f7af736843874cea8f5a0a8b886",
-        "signature": "9487aa22dbf6da8920b0dbd560c38ab796925f7af736843874cea8f5a0a8b886",
+        "version": "a46c4c817ba313310ada31fd03962a5c810820a486137efcedcf36d3816153cb",
+        "signature": "a46c4c817ba313310ada31fd03962a5c810820a486137efcedcf36d3816153cb",
         "affectsGlobalScope": false
       },
       "../src/auth/client/polaris-css.ts": {
@@ -727,7 +727,7 @@
         "affectsGlobalScope": false
       },
       "../src/auth/index.ts": {
-        "version": "fc4699ac1e351425abd915e51e3710c5b44a9ae18d9628f465acad918c0a06e5",
+        "version": "06f2e2c34d258cff338c775e06b42828cebf832f96827ec745b026dfeb75b4c6",
         "signature": "6197016c0b1de2208abed62a9df5ace0c99b18f5f59d9becafd8365c8c7bfb11",
         "affectsGlobalScope": false
       },
@@ -1262,6 +1262,7 @@
         "../../shopify-node-api/dist/base_types.d.ts"
       ],
       "../../shopify-node-api/dist/index.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/auth/session/index.d.ts",
         "../../shopify-node-api/dist/auth/session/session.d.ts",
         "../../shopify-node-api/dist/clients/graphql/index.d.ts",
@@ -1281,7 +1282,8 @@
         "../../shopify-node-api/dist/utils/shop-validator.d.ts",
         "../../shopify-node-api/dist/utils/store-session.d.ts",
         "../../shopify-node-api/dist/utils/with-session.d.ts",
-        "../../shopify-node-api/dist/webhooks/registry.d.ts"
+        "../../shopify-node-api/dist/webhooks/registry.d.ts",
+        "../node_modules/@types/node/http.d.ts"
       ],
       "../../shopify-node-api/dist/types.d.ts": [
         "../../shopify-node-api/dist/auth/oauth/types.d.ts",
@@ -1291,6 +1293,7 @@
         "../../shopify-node-api/dist/webhooks/types.d.ts"
       ],
       "../../shopify-node-api/dist/utils/delete-current-session.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],
       "../../shopify-node-api/dist/utils/graphql_proxy.d.ts": [
@@ -1300,6 +1303,7 @@
         "../../shopify-node-api/dist/auth/oauth/types.d.ts"
       ],
       "../../shopify-node-api/dist/utils/load-current-session.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/auth/session/index.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],
@@ -1319,6 +1323,7 @@
         "../../shopify-node-api/dist/utils/types.d.ts"
       ],
       "../../shopify-node-api/dist/webhooks/registry.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/webhooks/types.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],
@@ -1746,6 +1751,7 @@
         "../../shopify-node-api/dist/base_types.d.ts"
       ],
       "../../shopify-node-api/dist/index.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/auth/session/index.d.ts",
         "../../shopify-node-api/dist/auth/session/session.d.ts",
         "../../shopify-node-api/dist/clients/graphql/index.d.ts",
@@ -1765,7 +1771,8 @@
         "../../shopify-node-api/dist/utils/shop-validator.d.ts",
         "../../shopify-node-api/dist/utils/store-session.d.ts",
         "../../shopify-node-api/dist/utils/with-session.d.ts",
-        "../../shopify-node-api/dist/webhooks/registry.d.ts"
+        "../../shopify-node-api/dist/webhooks/registry.d.ts",
+        "../node_modules/@types/node/http.d.ts"
       ],
       "../../shopify-node-api/dist/types.d.ts": [
         "../../shopify-node-api/dist/auth/oauth/types.d.ts",
@@ -1775,6 +1782,7 @@
         "../../shopify-node-api/dist/webhooks/types.d.ts"
       ],
       "../../shopify-node-api/dist/utils/delete-current-session.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],
       "../../shopify-node-api/dist/utils/graphql_proxy.d.ts": [
@@ -1784,6 +1792,7 @@
         "../../shopify-node-api/dist/auth/oauth/types.d.ts"
       ],
       "../../shopify-node-api/dist/utils/load-current-session.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/auth/session/index.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],
@@ -1803,6 +1812,7 @@
         "../../shopify-node-api/dist/utils/types.d.ts"
       ],
       "../../shopify-node-api/dist/webhooks/registry.d.ts": [
+        "../../../node_modules/@types/node/index.d.ts",
         "../../shopify-node-api/dist/webhooks/types.d.ts",
         "../node_modules/@types/node/http.d.ts"
       ],

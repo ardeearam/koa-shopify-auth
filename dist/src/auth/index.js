@@ -78,24 +78,21 @@ function createShopifyAuth(options) {
                         _b.sent();
                         return [2 /*return*/];
                     case 3:
-                        if (!(ctx.path === oAuthCallbackPath)) return [3 /*break*/, 11];
+                        if (!(ctx.path === oAuthCallbackPath)) return [3 /*break*/, 10];
                         _b.label = 4;
                     case 4:
-                        _b.trys.push([4, 9, , 10]);
+                        _b.trys.push([4, 8, , 9]);
+                        _a = ctx.state;
                         return [4 /*yield*/, shopify_api_1.default.Auth.validateAuthCallback(ctx.req, ctx.res, ctx.query)];
                     case 5:
-                        _b.sent();
-                        _a = ctx.state;
-                        return [4 /*yield*/, shopify_api_1.default.Utils.loadCurrentSession(ctx.req, ctx.res, config.accessMode === 'online')];
-                    case 6:
                         _a.shopify = _b.sent();
-                        if (!config.afterAuth) return [3 /*break*/, 8];
+                        if (!config.afterAuth) return [3 /*break*/, 7];
                         return [4 /*yield*/, config.afterAuth(ctx)];
-                    case 7:
+                    case 6:
                         _b.sent();
-                        _b.label = 8;
-                    case 8: return [3 /*break*/, 10];
-                    case 9:
+                        _b.label = 7;
+                    case 7: return [3 /*break*/, 9];
+                    case 8:
                         e_1 = _b.sent();
                         switch (true) {
                             case (e_1 instanceof shopify_api_1.default.Errors.InvalidOAuthError):
@@ -117,17 +114,17 @@ function createShopifyAuth(options) {
                                 ctx.redirect(redirectUrl);
                                 break;
                         }
-                        return [3 /*break*/, 10];
-                    case 10: return [2 /*return*/];
-                    case 11:
-                        if (!(ctx.path === enableCookiesPath)) return [3 /*break*/, 13];
+                        return [3 /*break*/, 9];
+                    case 9: return [2 /*return*/];
+                    case 10:
+                        if (!(ctx.path === enableCookiesPath)) return [3 /*break*/, 12];
                         console.log('enableCookies');
                         return [4 /*yield*/, enableCookies(ctx)];
-                    case 12:
+                    case 11:
                         _b.sent();
                         return [2 /*return*/];
-                    case 13: return [4 /*yield*/, next()];
-                    case 14:
+                    case 12: return [4 /*yield*/, next()];
+                    case 13:
                         _b.sent();
                         return [2 /*return*/];
                 }
